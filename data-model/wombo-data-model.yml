@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/wombo-wai-openapi.yml
+docs: https://docs.w.ai/w.ai-api/models
+entities:
+- name: Model
+  description: An available inference model with modality and capability metadata.
+  key: id
+  fields: [id, name, created, input_modalities, output_modalities, context_length,
+    quantization, supported_sampling_parameters, supported_features]
+- name: ChatCompletion
+  description: A text or vision-language chat completion result.
+  fields: [id, object, model, choices]
+- name: ChatMessage
+  description: A message in a chat completion (system/user/assistant/tool).
+  fields: [role, content, tool_calls, tool_call_id]
+- name: Image
+  description: A generated or edited image result.
+  fields: [model, prompt, size]
+- name: Prediction
+  description: An object-detection or segmentation result over image/video.
+  fields: [model, input]
+relationships:
+- from: ChatCompletion
+  to: Model
+  type: belongs_to
+  via: model
+- from: ChatCompletion
+  to: ChatMessage
+  type: has_many
+  via: messages
+- from: Image
+  to: Model
+  type: belongs_to
+  via: model
+- from: Prediction
+  to: Model
+  type: belongs_to
+  via: model
+notes: >-
+  Entity graph derived from the generated OpenAPI schemas. Model ids are opaque
+  slugs (e.g. llama-3.2-1b-4bit, flux-1-dev, yolo11n, sam2); there is no id-prefix
+  scheme.

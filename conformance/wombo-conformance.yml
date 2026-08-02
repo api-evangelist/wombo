@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/wombo-wai-openapi.yml
+docs: https://docs.w.ai/w.ai-api/api-features
+standards:
+- id: openai-chat-completions
+  conforms: true
+  evidence: >-
+    Documented as OpenAI-compatible; /v1/chat/completions accepts OpenAI
+    messages/tools/tool_choice/stream and the OpenAI error object.
+- id: openai-images
+  conforms: true
+  evidence: /v1/images/generations and /v1/images/edits mirror the OpenAI Images API.
+- id: bearer-token-auth
+  conforms: true
+  evidence: openapi securityScheme type http scheme bearer
+- id: sse-streaming
+  conforms: true
+  evidence: stream=true returns server-sent events on chat/image endpoints.
+- id: oauth2
+  conforms: false
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use the OpenAI error object, not application/problem+json.
+notes: >-
+  Cross-cutting conformance derived from the documented contract. No published
+  security/compliance certification program (SOC 2 / ISO 27001 / etc.) was
+  found, so no `type: Compliance` pointer is emitted.

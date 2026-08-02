@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/wombo-wai-openapi.yml
+skills:
+- file: wombo-chat-completion.md
+  name: Generate a chat completion on w.ai
+  api: openapi/wombo-wai-openapi.yml
+  operations: [listModels, createChatCompletion]
+- file: wombo-image-generation.md
+  name: Generate and edit images on w.ai
+  api: openapi/wombo-wai-openapi.yml
+  operations: [listModels, createImage, createImageEdit]
+- file: wombo-detect-and-segment.md
+  name: Detect and segment objects on w.ai
+  api: openapi/wombo-wai-openapi.yml
+  operations: [listModels, createPrediction]

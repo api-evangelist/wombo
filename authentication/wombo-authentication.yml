@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/wombo-wai-openapi.yml
+docs: https://docs.w.ai/w.ai-api/api-features
+notes: >-
+  Single auth model: a developer API key (prefix `wsk-`) generated at
+  https://app.w.ai/developers/keys and sent as an `Authorization: Bearer`
+  header on the OpenAI-compatible endpoints. The `wai` CLI uses separate Auth
+  API keys (env `W_AI_API_KEY`) managed via `wai key list` / `wai revoke`. No
+  OAuth 2.0 / OIDC scope surface is documented, so no scopes/ artifact.
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: wsk
+  description: 'Developer API key issued at https://app.w.ai/developers/keys , sent as `Authorization:
+    Bearer wsk-...`.'
+  sources:
+  - openapi/wombo-wai-openapi.yml

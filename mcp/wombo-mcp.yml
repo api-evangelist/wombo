@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/wombo-wai-openapi.yml
+notes: >-
+  No official hosted/remote MCP server was found for w.ai. This is a candidate
+  tool list derived one-to-one from the documented OpenAPI operations, to seed a
+  future MCP wrapper over the OpenAI-compatible endpoints.
+server:
+  name: wai
+  transport: http
+tools:
+- name: list_models
+  description: List available models on the w.ai network.
+  source_operation: openapi/wombo-wai-openapi.yml#listModels
+- name: create_chat_completion
+  description: Create a text or vision-language chat completion (tools + streaming).
+  source_operation: openapi/wombo-wai-openapi.yml#createChatCompletion
+- name: create_image
+  description: Generate an image from a text prompt (FLUX, SDXL).
+  source_operation: openapi/wombo-wai-openapi.yml#createImage
+- name: create_image_edit
+  description: Edit an existing image from a text prompt (FLUX Kontext).
+  source_operation: openapi/wombo-wai-openapi.yml#createImageEdit
+- name: create_prediction
+  description: Run object detection (YOLO11n) or segmentation (SAM2).
+  source_operation: openapi/wombo-wai-openapi.yml#createPrediction

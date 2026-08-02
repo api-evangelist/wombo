@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for w.ai Inference API
+  version: 1.0.0
+extends: openapi/wombo-wai-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: wombo
+    x-apievangelist-openai-compatible: true
+    x-apievangelist-source: https://docs.w.ai/w.ai-api/api-features
+- target: $.info
+  update:
+    x-agent-notes: >-
+      OpenAI-compatible. Point any OpenAI SDK at https://api.w.ai/v1 with a wsk-
+      bearer key. Discover models via GET /v1/models before selecting one; a
+      model's supported_features lists tool_calling/streaming/json_mode support.

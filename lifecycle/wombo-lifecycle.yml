@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.w.ai/
+docs: https://docs.w.ai/
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://api.w.ai/v1
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  notes: No published deprecation/sunset policy was found.
+sla:
+  url: null
+  notes: No published SLA/uptime target was found (network is decentralized).
+status_page: null
+deprecated_operations: []
+notes: >-
+  URI-path versioning at /v1. No dedicated status page, deprecation policy, or
+  SLA is published, so no `type: StatusPage` or `type: Deprecation` pointer is
+  emitted. Model availability is dynamic via GET /v1/models.

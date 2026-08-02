@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.w.ai/get-started/quick-start
+notes: >-
+  w.ai does not publish a first-party client SDK in a language package registry
+  (no npm/PyPI package found for the API client). The API is OpenAI-compatible,
+  so any OpenAI SDK works against https://api.w.ai/v1. The only first-party
+  distributable is the `wai` worker/CLI container image on Docker Hub. No
+  `type: SDKs` pointer is emitted because there is no official client library.
+packages:
+- language: shell
+  registry: docker
+  name: wdotai/wai
+  url: https://hub.docker.com/r/wdotai/wai
+  install: docker pull wdotai/wai:latest
+  official: true
+  description: Optimized w.ai worker/CLI container image (CUDA + Vulkan variants).

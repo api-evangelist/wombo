@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.w.ai/w.ai-api/api-features
+docs: https://docs.w.ai/w.ai-api/api-features
+summary: >-
+  The w.ai Inference API is OpenAI-compatible. Cross-cutting request/response
+  semantics mirror the OpenAI HTTP conventions: bearer-key auth, JSON request
+  bodies (multipart for image edits), SSE streaming, and the OpenAI error
+  envelope. No idempotency key, cursor pagination, or field-expansion surface is
+  documented.
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  format: 'Bearer wsk-...'
+  ref: authentication/wombo-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No Idempotency-Key header or param is documented; requests are not
+    idempotent. No idempotency-type pointer is emitted.
+pagination:
+  supported: false
+  notes: List endpoints (/v1/models) return the full array with no cursor/offset
+    paging.
+streaming:
+  supported: true
+  mechanism: server-sent events
+  trigger: '"stream": true on /v1/chat/completions, /v1/images/generations,
+    /v1/images/edits'
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://api.w.ai/v1
+content_types:
+  request: [application/json, multipart/form-data]
+  response: [application/json, text/event-stream]
+error_envelope:
+  shape: openai
+  example: '{ "error": { "message": "...", "type": "...", "code": "..." } }'
+  ref: errors/wombo-problem-types.yml
+tool_calling:
+  supported: true
+  notes: OpenAI-style tools[] / tool_choice on /v1/chat/completions.

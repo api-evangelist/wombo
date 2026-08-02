@@ -1,0 +1,34 @@
+# w.ai Documentation
+
+## w.ai
+
+- [Introduction](https://docs.w.ai/get-started/quickstart.md): w.ai - The Global AI Supercomputer
+- [Quick Start](https://docs.w.ai/get-started/quick-start.md)
+- [FAQ](https://docs.w.ai/get-started/faq.md)
+- [Introduction](https://docs.w.ai/compute-rentals/introduction.md)
+- [How it works](https://docs.w.ai/compute-rentals/how-it-works.md)
+- [Jupyter Notebooks](https://docs.w.ai/compute-rentals/jupyter-notebooks.md)
+- [SSH](https://docs.w.ai/compute-rentals/ssh.md)
+- [Vision](https://docs.w.ai/w.ai-guide/vision.md)
+- [Supported Hardware](https://docs.w.ai/w.ai-guide/supported-hardware.md)
+- [w.ai CLI Guide](https://docs.w.ai/w.ai-cli-guide.md)
+- [Support](https://docs.w.ai/bugs-and-support/support.md)
+- [VPN Compatibility](https://docs.w.ai/vpn-compatibility.md)
+- [API Features](https://docs.w.ai/w.ai-api/api-features.md)
+- [Models](https://docs.w.ai/w.ai-api/models.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.w.ai/get-started/quickstart.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

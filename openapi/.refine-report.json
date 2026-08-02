@@ -1,0 +1,20 @@
+{
+  "provider": "wombo",
+  "sources": [
+    "wombo-chat-api-openapi.yml",
+    "wombo-images-api-openapi.yml",
+    "wombo-models-api-openapi.yml",
+    "wombo-predictions-api-openapi.yml"
+  ],
+  "outputs": [
+    "wombo-chat-api-openapi.yml",
+    "wombo-images-api-openapi.yml",
+    "wombo-models-api-openapi.yml",
+    "wombo-predictions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

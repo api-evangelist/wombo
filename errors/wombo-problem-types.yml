@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/wombo-wai-openapi.yml
+format: openai-error-object
+docs: https://docs.w.ai/w.ai-api/api-features
+envelope:
+  field: error
+  shape: '{ "error": { "message": string, "type": string, "code": string } }'
+  notes: >-
+    OpenAI-compatible error object (not RFC 9457 problem+json). Derived from the
+    documented OpenAI-compatible contract and the response codes in the generated
+    OpenAPI; titles/remediation are conventional for this error shape.
+problems:
+- status: 400
+  title: Bad request
+  meaning: Malformed request body, unknown model, or invalid parameter.
+  remediation: Validate the JSON body and the `model` id against GET /v1/models.
+  source_operation: openapi/wombo-wai-openapi.yml#createChatCompletion
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid API key.
+  remediation: >-
+    Send an `Authorization` Bearer header with a `wsk-` key from
+    https://app.w.ai/developers/keys
+
+  source_operation: openapi/wombo-wai-openapi.yml#listModels
+- status: 429
+  title: Too many requests
+  meaning: Rate limit or insufficient balance/points for the requested compute.
+  remediation: Back off and retry; check account balance/points.
+  source_operation: openapi/wombo-wai-openapi.yml#createChatCompletion

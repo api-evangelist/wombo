@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.w.ai/w.ai-cli-guide
+docs: https://docs.w.ai/w.ai-cli-guide
+name: wai
+description: >-
+  First-party w.ai command-line client. Used to log in, contribute a machine's
+  idle GPU compute to the network, and manage Auth API keys. Also distributed as
+  optimized Docker images (wdotai/wai) for headless/containerized workers.
+install:
+- platform: linux
+  method: shell
+  command: 'curl -fsSL https://app.w.ai/install.sh | bash'
+- platform: macos
+  method: shell
+  command: 'curl -fsSL https://app.w.ai/install.sh | bash'
+- platform: windows
+  method: powershell
+  command: 'iwr -useb https://app.w.ai/install.ps1 | iex'
+- platform: docker
+  method: docker
+  command: docker pull wdotai/wai:latest
+  image: https://hub.docker.com/r/wdotai/wai
+env:
+- name: W_AI_API_KEY
+  description: Auth API key for headless environments (created in the dashboard).
+commands:
+- name: login
+  description: Authenticate on a device with a browser/desktop environment.
+- name: run
+  description: Start contributing GPU compute to the network. `-g 0 1` limits to
+    specific NVIDIA GPU IDs.
+- name: key list
+  description: List generated API keys.
+- name: revoke
+  description: Revoke an API key by token (`wai revoke <token>`).
+- name: key help
+  description: Show key-management help.
+- name: help
+  description: Show an overview of the commands.
+flows:
+- name: Headless worker
+  steps:
+  - Create an Auth API key at https://app.w.ai/dashboard
+  - export W_AI_API_KEY=your_key_here
+  - wai run
