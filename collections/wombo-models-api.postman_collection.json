@@ -1,0 +1,162 @@
+{
+  "item": [
+    {
+      "id": "9ce2177d-f3c0-4f87-a781-cfa1647e505e",
+      "name": "Models",
+      "description": {
+        "content": "Model discovery",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e570c55c-9721-48a3-ba26-917498af0a48",
+          "name": "List available models",
+          "request": {
+            "name": "List available models",
+            "description": {
+              "content": "Retrieve metadata for all available models on the network, including id, name, input/output modalities, context length, quantization level and supported sampling parameters and features.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "763b9e05-d2f8-4e56-88b2-ad0091183db4",
+              "name": "A list of available model objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"llama-3.2-1b-4bit\",\n      \"object\": \"model\",\n      \"name\": \"string\",\n      \"created\": 9392,\n      \"input_modalities\": [\n        \"audio\",\n        \"image\"\n      ],\n      \"output_modalities\": [\n        \"json\",\n        \"text\"\n      ],\n      \"context_length\": 8151,\n      \"quantization\": \"8bit\",\n      \"supported_sampling_parameters\": [\n        \"string\",\n        \"string\"\n      ],\n      \"supported_features\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"llama-3.2-1b-4bit\",\n      \"object\": \"model\",\n      \"name\": \"string\",\n      \"created\": 67,\n      \"input_modalities\": [\n        \"text\",\n        \"image\"\n      ],\n      \"output_modalities\": [\n        \"text\",\n        \"json\"\n      ],\n      \"context_length\": 4274,\n      \"quantization\": \"8bit\",\n      \"supported_sampling_parameters\": [\n        \"string\",\n        \"string\"\n      ],\n      \"supported_features\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d81c683-c492-4ff0-b816-2b732cd5c061",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"type\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.w.ai/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e3994afd-7a4f-4c6b-9ad4-5ecb5a506654",
+    "name": "w.ai Inference Chat Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAI-compatible HTTP API for on-demand AI inference on the w.ai decentralized compute network (WOMBO). Provides model discovery, text and vision-language chat completions with tool calling and streaming, text-to-image generation and editing, and object detection / segmentation over images and video. Faithfully generated by the API Evangelist enrichment pipeline from the public documentation at https://docs.w.ai/w.ai-api/api-features ; not an official provider-published specification.\n\nContact Support:\n Name: w.ai (WOMBO)",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "w.ai Inference Chat Models API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.w.ai/v1/models"
+          },
+          "docs": "Retrieve metadata for all available models on the network, including id, name, input/output modalities, context length, quantization level and supported sampling parameters and features."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

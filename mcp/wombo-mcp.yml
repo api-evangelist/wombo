@@ -2,10 +2,9 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/wombo-wai-openapi.yml
-notes: >-
-  No official hosted/remote MCP server was found for w.ai. This is a candidate
-  tool list derived one-to-one from the documented OpenAPI operations, to seed a
-  future MCP wrapper over the OpenAI-compatible endpoints.
+notes: No official hosted/remote MCP server was found for w.ai. This is a candidate tool list derived
+  one-to-one from the documented OpenAPI operations, to seed a future MCP wrapper over the OpenAI-compatible
+  endpoints.
 server:
   name: wai
   transport: http
@@ -25,3 +24,9 @@ tools:
 - name: create_prediction
   description: Run object detection (YOLO11n) or segmentation (SAM2).
   source_operation: openapi/wombo-wai-openapi.yml#createPrediction
+deployment:
+  mode: none
+  verified: derived
+  tools: 5
+  checked: '2026-08-12'
+  source: catalog MCP census

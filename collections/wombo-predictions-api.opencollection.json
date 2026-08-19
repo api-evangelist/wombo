@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "w.ai Inference Chat Predictions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Predictions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run object detection or segmentation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.w.ai/v1/predictions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run object detection (yolo11n) or image/video segmentation (sam2) over an image or video, returning JSON detections or an annotated image/video."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "w.ai Inference Chat Images API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Images",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.w.ai/v1/images/generations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate images from a text prompt using models such as flux-1-dev and sdxl. Supports size, quality, seed, steps, guidance_scale, negative_prompt and streaming progress updates."
+        },
+        {
+          "info": {
+            "name": "Edit an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.w.ai/v1/images/edits",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Edit one or more existing images from a text prompt using FLUX Kontext models. Submitted as multipart/form-data with the source image file(s)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
