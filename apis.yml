@@ -40,6 +40,17 @@ image: https://w.ai/wai-logo.png
 tags:
 - Company
 - Artificial Intelligence
+- Machine-Learning
+- Inference
+- LLM
+- Image-Generation
+- Generative AI
+- Decentralized Compute
+- GPU
+- OpenAI-Compatible
+tags_raw:
+- Company
+- Artificial Intelligence
 - Machine Learning
 - Inference
 - LLM
@@ -77,6 +88,8 @@ apis:
   humanURL: https://docs.w.ai/w.ai-api/api-features
   baseURL: https://api.w.ai/v1
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
