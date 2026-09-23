@@ -1,10 +1,7 @@
 {
   "provider": "wombo",
   "sources": [
-    "wombo-chat-api-openapi.yml",
-    "wombo-images-api-openapi.yml",
-    "wombo-models-api-openapi.yml",
-    "wombo-predictions-api-openapi.yml"
+    "_original/wombo-wai-openapi.yml"
   ],
   "outputs": [
     "wombo-chat-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "wombo-wai-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "wombo-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "wombo-images-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "wombo-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "wombo-predictions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
