@@ -53,10 +53,10 @@ image: https://w.ai/wai-logo.png
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Inference
 - LLM
-- Image-Generation
+- Image Generation
 - Generative AI
 - Decentralized Compute
 - GPU
@@ -72,6 +72,8 @@ tags_raw:
 - Decentralized Compute
 - GPU
 - OpenAI Compatible
+- Machine-Learning
+- Image-Generation
 apis:
 - aid: wombo:wombo-chat-api
   name: Wombo Chat API
