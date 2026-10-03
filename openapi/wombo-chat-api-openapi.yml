@@ -46,63 +46,21 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    RateLimited:
-      description: Too many requests.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Invalid request.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
+    ChatCompletionResponse:
       type: object
       properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-            type:
-              type: string
-            code:
-              type: string
-    ChatMessage:
-      type: object
-      required:
-      - role
-      properties:
-        role:
+        id:
           type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-        content:
-          description: A string, or an array of content parts (text / image_url).
-          oneOf:
-          - type: string
-          - type: array
-            items:
-              type: object
-        tool_calls:
+        object:
+          type: string
+          example: chat.completion
+        model:
+          type: string
+        choices:
           type: array
           items:
             type: object
-        tool_call_id:
-          type: string
     ChatCompletionRequest:
       type: object
       required:
@@ -156,20 +114,62 @@ components:
             - auto
             - required
           - type: object
-    ChatCompletionResponse:
+    Error:
       type: object
       properties:
-        id:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+            type:
+              type: string
+            code:
+              type: string
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
           type: string
-        object:
-          type: string
-          example: chat.completion
-        model:
-          type: string
-        choices:
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
+          description: A string, or an array of content parts (text / image_url).
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        tool_calls:
           type: array
           items:
             type: object
+        tool_call_id:
+          type: string
+  responses:
+    BadRequest:
+      description: Invalid request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http
