@@ -75,28 +75,6 @@ tags_raw:
 - Machine-Learning
 - Image-Generation
 apis:
-- aid: wombo:wombo-chat-api
-  name: Wombo Chat API
-  description: Text and vision-language chat completions
-  humanURL: https://docs.w.ai/w.ai-api/api-features
-  baseURL: https://api.w.ai/v1
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/wombo-chat-api-openapi.yml
-  - type: APIReference
-    url: https://docs.w.ai/w.ai-api/api-features
-  - type: Documentation
-    url: https://docs.w.ai/
-  - type: Authentication
-    url: authentication/wombo-authentication.yml
-  - type: Conventions
-    url: conventions/wombo-conventions.yml
-  - type: ErrorCatalog
-    url: errors/wombo-problem-types.yml
-  - type: DataModel
-    url: data-model/wombo-data-model.yml
 - aid: wombo:wombo-images-api
   name: Wombo Images API
   description: Image generation and editing
@@ -153,6 +131,28 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/wombo-predictions-api-openapi.yml
+  - type: APIReference
+    url: https://docs.w.ai/w.ai-api/api-features
+  - type: Documentation
+    url: https://docs.w.ai/
+  - type: Authentication
+    url: authentication/wombo-authentication.yml
+  - type: Conventions
+    url: conventions/wombo-conventions.yml
+  - type: ErrorCatalog
+    url: errors/wombo-problem-types.yml
+  - type: DataModel
+    url: data-model/wombo-data-model.yml
+- aid: wombo:wombo-chat-completions-api
+  name: Wombo Chat Completions API
+  description: Text and vision-language chat completions
+  humanURL: https://docs.w.ai/w.ai-api/api-features
+  baseURL: https://api.w.ai/v1
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/wombo-chat-completions-api-openapi.yml
   - type: APIReference
     url: https://docs.w.ai/w.ai-api/api-features
   - type: Documentation

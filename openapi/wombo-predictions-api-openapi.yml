@@ -54,18 +54,6 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-            type:
-              type: string
-            code:
-              type: string
     PredictionRequest:
       type: object
       required:
@@ -88,6 +76,18 @@ components:
               description: Video URL or base64.
             return_json:
               type: boolean
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+            type:
+              type: string
+            code:
+              type: string
   securitySchemes:
     bearerAuth:
       type: http

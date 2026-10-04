@@ -16,13 +16,13 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: Chat
+- name: Chat Completions
   description: Text and vision-language chat completions
 paths:
   /chat/completions:
     post:
       tags:
-      - Chat
+      - Chat Completions
       operationId: createChatCompletion
       summary: Create a chat completion
       description: Create a text or vision-language chat completion. Supports multimodal image_url content, tool/function calling and server-sent streaming.
@@ -46,6 +46,25 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Invalid request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     ChatCompletionResponse:
       type: object
@@ -114,18 +133,6 @@ components:
             - auto
             - required
           - type: object
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            message:
-              type: string
-            type:
-              type: string
-            code:
-              type: string
     ChatMessage:
       type: object
       required:
@@ -151,25 +158,18 @@ components:
             type: object
         tool_call_id:
           type: string
-  responses:
-    BadRequest:
-      description: Invalid request.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too many requests.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Missing or invalid API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+            type:
+              type: string
+            code:
+              type: string
   securitySchemes:
     bearerAuth:
       type: http
