@@ -1,0 +1,23 @@
+edges:
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/wombo/blob/main/openapi/wombo-chat-completions-api-openapi.yml#L5
+  contract_reference:
+    repo: wombo
+    spec_file: wombo-chat-completions-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'wombo declares OpenAI compatibility: ''description: OpenAI-compatible HTTP API for on-demand AI inference
+      on the w.ai decentralized compute network (WOMBO). Provides model discovery, text and vision-'''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-13'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked: []
