@@ -18,6 +18,28 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: Discord (discord-app-directory)
+  partner: discord
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: discord-app-directory
+  evidence: https://discord.com/discovery/applications/996534605828083824
+  mirror_of: discord/integrations/discord-integration-edges.yml
+  apps:
+  - WOMBOT
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Social
+  publisher_verified:
+  - discord-verified-app
 generated: '2026-10-13'
 method: searched
-checked: []
+checked:
+- discord/integrations/discord-integration-edges.yml
+source:
+- discord/integrations/discord-integration-edges.yml
